@@ -189,8 +189,9 @@ a {
 
 #about .about-content,
 #skills .skills-content,
+#timeline .timeline-content,
 #work .work-content {
-  padding-top: 0.8rem;
+  padding-top: 2.4rem;
   padding-bottom: 0.8rem;
 }
 
@@ -253,7 +254,7 @@ a {
 }
 
 #skills {
-  background: #f8f9fa;
+  background: #eef0f2;
 }
 
 #skills .skills-title {
@@ -404,7 +405,7 @@ a {
 }
 
 #work {
-  background: #f8f9fa;
+  background: #eef0f2;
 }
 
 #work .work-title {
