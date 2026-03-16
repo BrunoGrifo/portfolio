@@ -89,6 +89,40 @@ window.addEventListener('keydown', (e) => {
 });
 
 
+// ── Skill bar animations ──────────────────────────────────────────────────────
+
+const skillBars = document.querySelectorAll('.skill-rate');
+
+function resetSkillBars() {
+  skillBars.forEach(bar => {
+    bar.style.transition = 'none';
+    bar.style.width = '0';
+  });
+}
+
+function animateSkillBars() {
+  skillBars.forEach((bar, i) => {
+    setTimeout(() => {
+      bar.style.transition = 'width 1s ease-out';
+      bar.style.width = bar.dataset.width;
+    }, i * 100);
+  });
+}
+
+const skillsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateSkillBars();
+    } else {
+      resetSkillBars();
+    }
+  });
+}, { threshold: 0.3 });
+
+const skillsSection = document.querySelector('#skills');
+if (skillsSection) skillsObserver.observe(skillsSection);
+
+
 // ── Timeline item animations ──────────────────────────────────────────────────
 
 const timelineContent = document.querySelector('#timeline .timeline-content');
