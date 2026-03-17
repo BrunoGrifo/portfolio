@@ -89,6 +89,23 @@ window.addEventListener('keydown', (e) => {
 });
 
 
+// ── Back to top ───────────────────────────────────────────────────────────────
+
+const backToTop = document.querySelector('#back-to-top');
+if (backToTop) {
+  backToTop.addEventListener('click', () => scrollToIndex(0));
+
+  const footerObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      backToTop.classList.toggle('visible', entry.isIntersecting);
+    });
+  }, { threshold: 0.1 });
+
+  const footer = document.querySelector('#contact');
+  if (footer) footerObserver.observe(footer);
+}
+
+
 // ── Skill bar animations ──────────────────────────────────────────────────────
 
 const skillBars = document.querySelectorAll('.skill-rate');

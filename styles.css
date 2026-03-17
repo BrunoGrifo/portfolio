@@ -413,6 +413,7 @@ a {
 
 #work {
   background: #eef0f2;
+  position: relative;
 }
 
 #work .work-title {
@@ -452,9 +453,41 @@ a {
 
 
 #contact {
-  height: 20vh;
+  height: 10vh;
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+@keyframes float-up {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+
+#back-to-top {
+  position: absolute;
+  bottom: 1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #3D3D3D;
+  font-size: 1.2rem;
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  animation: float-up 1.8s ease-in-out infinite;
+  transition: opacity 0.4s ease;
+}
+
+#back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#back-to-top:hover {
+  opacity: 0.5;
 }
 
 #contact .container {
@@ -465,12 +498,12 @@ a {
 
 #contact .contact-icons {
   display: flex;
-  gap: 1.2rem;
+  gap: 3.5rem;
   align-items: center;
 }
 
 #contact .contact-icons a {
-  font-size: 2rem;
+  font-size: 2.4rem;
   color: #3D3D3D;
   -webkit-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
