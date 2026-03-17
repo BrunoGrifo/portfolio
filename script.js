@@ -1,5 +1,9 @@
 // ── Snap scroll ──────────────────────────────────────────────────────────────
 
+// 11-inch screens are ~1024px wide — disable snap below this
+const snapMedia = window.matchMedia('(min-width: 1024px)');
+const shouldSnap = () => snapMedia.matches;
+
 const snapSections = [...document.querySelectorAll('section, footer#contact')];
 let currentIndex = 0;
 let isAnimating = false;
@@ -46,6 +50,8 @@ window.addEventListener('load', initIndex);
 
 // Wheel — intercept and snap one section at a time
 window.addEventListener('wheel', (e) => {
+  if (!shouldSnap()) return;
+
   // Let the timeline's inner scroll handle its own wheel events
   if (timelineContent && timelineContent.contains(e.target)) {
     const { scrollTop, scrollHeight, clientHeight } = timelineContent;
@@ -67,6 +73,7 @@ window.addEventListener('touchstart', (e) => {
 }, { passive: true });
 
 window.addEventListener('touchmove', (e) => {
+  if (!shouldSnap()) return;
   if (timelineContent && timelineContent.contains(e.target)) return;
   if (isAnimating) { e.preventDefault(); return; }
 
@@ -79,6 +86,7 @@ window.addEventListener('touchmove', (e) => {
 
 // Keyboard arrow / page keys
 window.addEventListener('keydown', (e) => {
+  if (!shouldSnap()) return;
   if (['ArrowDown', 'PageDown'].includes(e.key)) {
     e.preventDefault();
     scrollToIndex(currentIndex + 1);
