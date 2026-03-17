@@ -218,6 +218,10 @@ a {
 
 #about .about-content .about-image {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
 #about .about-content .about-image img {
