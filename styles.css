@@ -730,3 +730,121 @@ a {
   }
 }
 /*# sourceMappingURL=main.css.map */
+
+/* ── Mobile overhaul (< 1024px) ─────────────────────────────────────────────
+   Placed last so it overrides all existing 768px / 600px rules.             */
+@media (max-width: 1023px) {
+
+  /* Disable CSS snap — JS already skips snap logic below 1024px */
+  html {
+    scroll-snap-type: none;
+  }
+
+  /* Sections grow to fit their content */
+  #about,
+  #skills,
+  #timeline,
+  #work {
+    height: auto;
+    overflow: visible;
+    scroll-snap-align: none;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    display: block;
+  }
+
+  /* Tighter horizontal margins */
+  .container {
+    max-width: 92%;
+  }
+
+  /* Section titles ~20% bigger */
+  #about .about-title,
+  #skills .skills-title,
+  #timeline .timeline-title,
+  #work .work-title {
+    font-size: 2.4rem;
+  }
+
+  /* Lead paragraphs ~20% bigger */
+  #about p.lead,
+  #skills p.lead,
+  #timeline p.lead,
+  #work p.lead {
+    font-size: 1.4rem;
+  }
+
+  /* ── About: image → cv-btn → separator line → text ── */
+  #about {
+    align-items: center;
+  }
+
+  #about .container {
+    height: auto;
+    display: block;
+    overflow: visible;
+  }
+
+  #about .about-content {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    grid-template-columns: unset;
+    padding: 0;
+    overflow: visible;
+    flex: unset;
+    min-height: unset;
+    gap: 0;
+  }
+
+  #about .about-content .about-image {
+    width: 180px;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    flex-shrink: 0;
+  }
+
+  #about .about-content .about-image img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
+
+  #about .about-content .about-image .cv-btn {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: 0.8rem;
+  }
+
+  #about .about-content .about-text {
+    width: 100%;
+    border-left: none;
+    border-top: 2px solid #343a40;
+    padding-left: 0;
+    padding-top: 1rem;
+    margin: 1.2rem 0 0;
+  }
+
+  #about .about-content .about-text .lead {
+    font-size: 1.1rem;
+  }
+
+  /* ── Skills: more breathing room between items ── */
+  #skills .skills-content {
+    gap: 1.8rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* ── Timeline: section is auto-height, inner box stays scrollable ── */
+  #timeline {
+    overflow: visible;
+  }
+
+  #timeline .timeline-content {
+    max-height: 55vh;
+  }
+}
