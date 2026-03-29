@@ -820,12 +820,19 @@ a {
   }
 
   #about .about-content .about-text {
-    width: 100%;
+    align-self: stretch;
     border-left: none;
+    border-top: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0;
+    margin: 1.2rem 1rem 0;
+    text-align: justify;
+  }
+
+  #about .about-content .about-text > *:first-child {
     border-top: 2px solid #343a40;
-    padding-left: 0;
     padding-top: 1rem;
-    margin: 1.2rem 0 0;
   }
 
   #about .about-content .about-text .lead {
@@ -835,8 +842,8 @@ a {
   /* ── Skills: more breathing room between items ── */
   #skills .skills-content {
     gap: 1.8rem;
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   /* ── Timeline: section is auto-height, inner box stays scrollable ── */
