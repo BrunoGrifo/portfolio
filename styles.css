@@ -410,8 +410,8 @@ a {
   bottom: 0;
   width: 400px;
   padding: 1rem;
-  -webkit-transition: all 0.8s ease-in-out;
-  transition: all 0.8s ease-in-out;
+  -webkit-transition: opacity 0.6s ease-in-out;
+  transition: opacity 0.6s ease-in-out;
   visibility: hidden;
   opacity: 0;
 }
@@ -422,15 +422,11 @@ a {
 
 #timeline .timeline-content ul li:nth-child(odd) div {
   left: 20px;
-  -webkit-transform: translate(100px, 0);
-          transform: translate(100px, 0);
 }
 
 #timeline .timeline-content ul li:nth-child(even) div {
   text-align: right;
   left: -414px;
-  -webkit-transform: translate(-100px, 0);
-          transform: translate(-100px, 0);
 }
 
 #timeline .timeline-content ul li::after {
@@ -447,8 +443,6 @@ a {
 }
 
 #timeline .timeline-content ul li.show div {
-  -webkit-transform: none;
-          transform: none;
   visibility: visible;
   opacity: 1;
 }
