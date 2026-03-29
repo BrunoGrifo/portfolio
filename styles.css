@@ -243,12 +243,22 @@ a {
 
 #about .about-content .about-text {
   color: #212529;
-  border-left: 2px solid #343a40;
   padding-left: 2rem;
 }
 
-#about .about-content .about-text .lead {
-  font-size: clamp(0.9rem, 1.5vw, 1.4rem);
+#about .about-content .about-text p {
+  font-size: clamp(1.1rem, 1.8vw, 1.7rem);
+}
+
+#about .about-image-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  border: none;
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 .cv-btn {
@@ -831,11 +841,10 @@ a {
   }
 
   #about .about-content .about-text > *:first-child {
-    border-top: 2px solid #343a40;
     padding-top: 1rem;
   }
 
-  #about .about-content .about-text .lead {
+  #about .about-content .about-text p {
     font-size: 1.1rem;
   }
 
