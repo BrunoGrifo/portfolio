@@ -237,8 +237,6 @@ a {
   max-height: 40vh;
   margin: auto;
   border-radius: 5%;
-  -webkit-box-shadow: 2px 0px 23px 0px rgba(0, 0, 0, 0.4);
-          box-shadow: 2px 0px 23px 0px rgba(0, 0, 0, 0.4);
 }
 
 #about .about-content .about-text {
